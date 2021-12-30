@@ -1,0 +1,43 @@
+<html>
+   <body>
+      <form name="frm1">
+         Enter name
+         <input type="text" name="t1"><br><br>
+         Enter Address<br>
+         <textarea name="t2" placeholder="PERMANANT ADDRESS"></textarea>
+         <br><br>
+         Enter Telephone Number
+         <input type="tel" maxlength="10"><br><br>
+         Enter Email Address
+         <input type="email" name="t3" pattern="[A-Z a-z]{5}-[@]{1}-[.]{1}" placeholder="lax2107@gmail.com"><br><br>
+         <input type="button" name="b1" value="submit" onclick="chk()">
+      </form>
+   </body>
+   <script type="text/javascript">
+   function chk()
+   {
+      var x=frm1.t3.value;
+      var atpos=x.indexOf("@");
+      var lastat=x.lastIndexOf("@");
+      var firstdot=x.indexOf(".");
+      var dotpos=x.lastIndexOf(".");
+      
+      
+      if(atpos<1 ||dotpos<atpos+2 ||dotpos+2>=x.length ||firstdot<atpos || atpos<lastat)
+      {
+         alert("Not a valid email address");
+         frm1.t3.focus();
+         
+      }
+     else
+     {
+        alert("Email address is accepted");
+        return true;
+     }
+   }
+   </script>
+</html>
+
+
+
+
